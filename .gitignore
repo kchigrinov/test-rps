@@ -3,5 +3,4 @@ public/apidoc
 /storage/*.key
 /vendor
 /.idea
-.env
 _ide_helper.php
