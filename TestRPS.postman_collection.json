@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "ed403965-d2d6-49ee-af80-a4ce3f1a4226",
+		"name": "TestRPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://test-rps.local/api/rps/create",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Join Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nickname",
+							"value": "grover",
+							"type": "text"
+						},
+						{
+							"key": "cost",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "slots",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://test-rps.local/api/rps/join/1",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"join",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Gesture Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nickname",
+							"value": "grover",
+							"type": "text"
+						},
+						{
+							"key": "gesture",
+							"value": "rock",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://test-rps.local/api/rps/gesture/1",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"gesture",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quit Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nickname",
+							"value": "gustave",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://test-rps.local/api/rps/quit/1",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"quit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Games",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://test-rps.local/api/rps/list",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History Games",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://test-rps.local/api/rps/history",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Game",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://test-rps.local/api/rps/game/1",
+					"protocol": "http",
+					"host": [
+						"test-rps",
+						"local"
+					],
+					"path": [
+						"api",
+						"rps",
+						"game",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dd22ddd2-2429-4973-8745-f8637aa44ad4",
+				"type": "text/javascript",
+				"exec": [
+					"var Header = require('postman-collection').Header;",
+					"pm.request.headers.add(new Header(\"Content-Type: application/json\"));",
+					"pm.request.headers.add(new Header(\"Accept: application/json\"));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "495d71cd-fa3f-45dd-853c-da595a95085b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
